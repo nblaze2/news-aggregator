@@ -8,12 +8,18 @@
   <body>
     <h1>Slacker New News Aggregator</h1>
     <h3>Articles:</h3>
-
     <ul>
+      <% @articles.each do |row| %>
+        <% @article_title = row[0] %>
+        <% @article_url = row[1] %>
+        <% @article_description = row[2] %>
         <li>
-          <%= @article_title %> - <a href="<%= @article_url %>"><%= @article_url %></a> Description: <%= @article_description %>
+          <strong><%= @article_title %></strong> - <a href="<%= @article_url %>"><%= @article_url %></a> <strong>Description: </strong><%= @article_description %>
         </li>
+      <% end %>
     </ul>
-  <a href="/articles/new">Submit an Article to Slacker News</a>
+  <div class="submit_link">
+    <a href="/articles/new">Submit an Article to Slacker News</a>
+  </div>
   </body>
 </html>

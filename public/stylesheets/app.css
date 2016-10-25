@@ -33,3 +33,7 @@ textarea {
   width: 275px;
   height: 100px;
 }
+
+.submit_link {
+  margin: 20px 0 0 5px;
+}

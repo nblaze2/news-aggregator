@@ -4,11 +4,7 @@ require 'csv'
 set :bind, '0.0.0.0'  # bind to all interfaces
 
 get '/articles' do
-  CSV.foreach("articles.csv") do |row|
-    @article_title = row[0]
-    @article_url = row[1]
-    @article_description = row[2]
-  end
+  @articles = CSV.readlines('articles.csv')
   erb :index
 end
 
