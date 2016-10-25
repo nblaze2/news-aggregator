@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Roasted Brussels Sprouts</title>
+    <title>Slacker New News</title>
+    <link rel="stylesheet" href="/stylesheets/app.css">
   </head>
 
   <body>
-    <h2>Roasted Brussels Sprouts</h2>
-    <h3>Ingredients</h3>
+    <h1>Slacker New News Aggregator</h1>
+    <h3>Articles:</h3>
 
     <ul>
-      <% @ingredients.each do |ingredient| %>
-        <li><%= ingredient %></li>
-      <% end %>
+        <li>
+          <%= @article_title %> - <a href="<%= @article_url %>"><%= @article_url %></a> Description: <%= @article_description %>
+        </li>
     </ul>
-
+  <a href="/articles/new">Submit an Article to Slacker News</a>
   </body>
 </html>

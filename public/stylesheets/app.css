@@ -1,11 +1,15 @@
 body {
-  text-align: center;
   background-color: #6495ed;
+}
+
+body .submission_page {
+  text-align: center;
+
 }
 
 form {
   text-align: left;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
   width: 300px;
   padding: 1em;
   border: 1px solid #CCC;
