@@ -19,12 +19,21 @@ post '/articles' do
     @error[:title] = "You must include a Title"
   end
   @url = params['url']
-  if @url.empty?
+  if @url.empty? # || url checking method?
     @error[:url] = "You must include a URL"
   end
+  CSV.foreach("articles.csv") do |row|
+    if @url == row[1]
+      @error[:url] = "That article has already been submitted. Please submit another."
+      break
+    end
+  end
+      
   @description = params['description']
   if @description.empty?
     @error[:description] = "You must include a Description"
+  elsif @description.length < 20
+    @error[:description] = "You must include a Description of at least 20 characters"
   end
 
   if @error.keys.empty?
