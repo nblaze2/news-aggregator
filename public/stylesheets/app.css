@@ -22,16 +22,15 @@ form div {
 }
 
 form div input {
-  width: 225px;
+  width: 275px;
 }
 
 form > input {
   margin: 10px;
 }
 
-textarea {
-  width: 275px;
-  height: 100px;
+span.error-message {
+  color: red;
 }
 
 .submit_link {

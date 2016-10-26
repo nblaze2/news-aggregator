@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'pry'
 require 'csv'
+require 'uri'
+
 set :bind, '0.0.0.0'  # bind to all interfaces
 
 get '/articles' do
@@ -18,17 +20,21 @@ post '/articles' do
   if @title.empty?
     @error[:title] = "You must include a Title"
   end
+
   @url = params['url']
-  if @url.empty? # || url checking method?
+  if @url.empty?
     @error[:url] = "You must include a URL"
+  elsif !(@url.include?('www') && @url.include?('http'))
+    @error[:url] = "Invalid URL"
   end
+
   CSV.foreach("articles.csv") do |row|
     if @url == row[1]
       @error[:url] = "That article has already been submitted. Please submit another."
       break
     end
   end
-      
+
   @description = params['description']
   if @description.empty?
     @error[:description] = "You must include a Description"

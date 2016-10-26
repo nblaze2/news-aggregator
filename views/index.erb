@@ -14,7 +14,7 @@
         <% @article_url = row[1] %>
         <% @article_description = row[2] %>
         <li>
-          <strong><%= @article_title %></strong> - <a href="<%= @article_url %>"><%= @article_url %></a> <strong>Description: </strong><%= @article_description %>
+          <strong><%= @article_title %></strong> - <a href="<%= @article_url %>" target="_blank"><%= @article_url %></a> <strong>Description: </strong><%= @article_description %>
         </li>
       <% end %>
     </ul>

@@ -14,19 +14,19 @@
       <div>
         <label for="title">Title:</label>
         <input value="<%= @title %>" type="text" id="title" name="title" />
-        <%= @error ? @error[:title] : "" %>
+        <span class="error-message"><%= @error ? @error[:title] : "" %></span>
       </div>
       <div>
         <label for="url">URL:</label>
         <input value="<%= @url %>" type="url" id="url" name="url" />
-        <%= @error ? @error[:url] : "" %>
+        <span class="error-message"><%= @error ? @error[:url] : "" %></span>
       </div>
       <div>
         <label for="description">Description:</label>
       </div>
       <div>
-        <textarea value="<%= @description %>" id="description" name="description"></textarea>
-        <%= @error ? @error[:description] : "" %>
+        <input value="<%= @description %>" id="description" name="description"></input>
+        <span class="error-message"><%= @error ? @error[:description] : "" %></span>
       </div>
       <input type="submit">
     </form>
